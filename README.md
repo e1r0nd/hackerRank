@@ -1,5 +1,5 @@
 # hackerRank
 
-##My solutions for https://www.hackerrank.com
+## My solutions for https://www.hackerrank.com
 
 My profile https://www.hackerrank.com/a_merezhanyi
