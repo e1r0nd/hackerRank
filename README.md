@@ -1,4 +1,4 @@
-# hackerRank
+# Hacker Rank
 
 ## My solutions for https://www.hackerrank.com
 
