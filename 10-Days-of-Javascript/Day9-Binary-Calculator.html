@@ -1,0 +1,87 @@
+<!--
+    Day 9: Binary Calculator
+    https://www.hackerrank.com/challenges/js10-binary-calculator
+-->
+<!-- Enter your HTML code here -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Binary Calculator</title>
+        <style>
+            body {    
+                width: 33%;
+            }
+
+            #res {
+                background-color: lightgray;
+                border: solid;
+                height: 48px;
+                font-size: 20px;
+            }
+
+            button {
+                width: 25%;
+                height: 36px;
+                font-size: 18px;
+                margin: 0px;
+                float: left;
+            }
+
+            #btn0, #btn1 {
+                background-color: lightgreen;
+                color: brown;
+            }
+
+            #btnClr, #btnEql {
+                background-color: darkgreen;
+                color: white;
+            }
+
+            #btnSum, #btnSub, #btnMul, #btnDiv {
+                background-color: black;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='res' class='btnResult'></div>
+        <div id='btns'>
+            <button id='btn0' class='btnA'>0</button>
+            <button id='btn1' class='btnA'>1</button>
+            <button id='btnClr' class='btnB'>C</button>
+            <button id='btnEql' class='btnB'>=</button>
+            <button id='btnSum' class='btnC'>+</button>
+            <button id='btnSub' class='btnC'>-</button>
+            <button id='btnMul' class='btnC'>*</button>
+            <button id='btnDiv' class='btnC'>/</button>
+        </div>
+        <script>
+            const onClick = (btn, fn) => btn.addEventListener('click', fn);
+            const action = (btn, op) => {
+                onClick(btn, () => op ? res.innerText += op : res.innerText = '');
+            }
+
+            action(btn0, '0');
+            action(btn1, '1');
+            action(btnClr, '');
+            action(btnSub, '-');
+            action(btnSum, '+');
+            action(btnMul, '*');
+            action(btnDiv, '/');
+            
+            const ops = {
+                '+': (a,b) => a + b,
+                '-': (a,b) => a - b,
+                '*': (a,b) => a * b,
+                '/': (a,b) => Math.floor(a / b),
+            }
+
+            onClick(btnEql, () => {
+                const [op1, operator, op2] = res.innerText.split(/\b/);
+                const [n1, n2] = [parseInt(op1, 2), parseInt(op2, 2)];
+                res.innerText = Number(ops[operator](n1,n2)).toString(2);
+            });
+        </script>
+    </body>
+</html>
