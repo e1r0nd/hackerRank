@@ -1,0 +1,33 @@
+<!-- Day 8: Create a Button
+ https://www.hackerrank.com/challenges/js10-create-a-button
+-->
+<!-- Enter your HTML code here -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Button</title>
+    </head>
+    
+    <body>
+    	<script>
+            const clickMeButton = document.createElement('button');
+            let counter = 0;
+            clickMeButton.id = 'btn';
+            clickMeButton.className = 'btn';
+            clickMeButton.innerHTML = counter;
+            clickMeButton.style.width = '96px';
+            clickMeButton.style.height = '48px';
+            clickMeButton.style.fontSize = '24px';
+
+            document.body.appendChild(clickMeButton);
+
+            const btn = document.getElementById('btn');
+
+            btn.onclick = function() {
+                counter += 1;
+                btn.innerHTML = counter;
+            }
+        </script>
+    </body>
+</html>
