@@ -1,6 +1,6 @@
 // https://www.hackerrank.com/challenges/count-triplets-1
 
-// 1 Plain solution. Works for 5 cases of 13.
+// 1 Plain solution. Works for small arrays only (5/13 cases)
 function countTriplets(arr, r) {
     let triples = 0;
     const pairs = [];
